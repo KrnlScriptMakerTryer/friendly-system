@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    color: #333;
+}
+
+.input-area {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#newDareInput {
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+}
+
+#addDareButton {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addDareButton:hover {
+    background-color: #45a049;
+}
+
+hr {
+    width: 80%;
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.wheel-container {
+    position: relative;
+    width: 350px; /* Diameter of the wheel */
+    height: 350px;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wheel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid #333;
+    overflow: hidden;
+    /* Transition is set by JavaScript */
+}
+
+.pointer {
+    position: absolute;
+    top: -20px; /* Position above the wheel */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #cc0000; /* Red triangle */
+    z-index: 10;
+}
+
+/* Styling for the dynamically created segments */
+.segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 50%;
+    transform-origin: 0% 100%; /* Pivot point is the center of the wheel */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.segment-text {
+    position: absolute;
+    transform: rotate(90deg) translate(0, -50%); /* Rotate text to be horizontal when facing the pointer */
+    width: 150%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#spinButton {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#spinButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#resultDisplay {
+    margin-top: 30px;
+    color: #00796b;
+    text-align: center;
+}
+
